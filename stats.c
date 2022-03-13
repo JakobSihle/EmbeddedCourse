@@ -37,26 +37,95 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
+  print_array(test);
+  print_statistics(test);
+  print_array(test);
 }
 
 /* Add other Implementation File Code Here */
 void print_statistics (unsigned char array[]) {
+  int min = find_minimum(array);
+  int max = find_maximum(array);
+  double mean = find_mean(array);
+  double median = find_median(array);
+
+  printf("\nMin = %d", min);
+  printf("\nMax = %d", max);
+  printf("\nMean = %f", mean);
+  printf("\nMedian = %f \n", median);
 }
 
 void print_array (unsigned char array[]) {
+  int index;
+  for ( index = 0; index < SIZE; index++){
+    printf("%d ", array[index]);
+  }
 }
 
 int find_minimum (unsigned char array[]){
+  int min = array[0];
+  int index;
+  for ( index = 1; index < SIZE; index++){
+    if ( min > array[index]){
+      min = array[index];
+    }
+  }
+  return min;
 }
 
 int find_maximum (unsigned char array[]){
+  int max = array[0];
+  int index;
+  for ( index = 1; index < SIZE; index++){
+    if ( max < array[index]){
+      max = array[index];
+    }
+  }
+  return max;
 }
 
 double find_mean (unsigned char array[]){
+  double sum;
+  int index;
+  double mean;
+  for (index = 0; index < SIZE; index++){
+    sum = sum + array[index];
+  }
+  mean = sum / SIZE;
+  return mean;
 }
 
 double find_median (unsigned char array[]){
+  double median;
+  sort_array(array);
+  if (SIZE%2 == 0){
+    double med1 = array[SIZE/2 - 1];
+    double med2 = array[SIZE/2];
+    median = (med1 + med2) / 2;
+  } else {
+    median = array[(SIZE + 1) / 2];
+  }
+  return median;
 }
 
 void sort_array (unsigned char array[]){
+  int index;
+  int iteration;
+  int temp;
+  int max;
+  int maxIndex;
+
+  for (iteration = 0; iteration < SIZE; iteration++){
+    max = array[iteration];
+    maxIndex = iteration;
+    temp = array[iteration];
+    for (index = iteration; index < SIZE; index++){
+      if (array[index] > max){
+        max = array[index];
+        maxIndex = index;
+      }
+    }
+    array[iteration] = max;
+    array[maxIndex] = temp;
+  }
 }
