@@ -9,13 +9,15 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief Program containing various functions for statistical analysis of
+ * an array
  *
- * <Add Extended Description Here>
+ * This proram contains for example functions used to find the minimum, 
+ * maximum, mean or median within a given array of unsigned 8-bit char.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Jakob Sihle-Wissel
+ * @date 13/03/2022
  *
  */
 
