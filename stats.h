@@ -9,13 +9,16 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.h 
+ * @brief This header file declares the functions used in stats.c
  *
- * <Add Extended Description Here>
+ * This file contains the declaration and information about various
+ * functions used for statistical analysis of an array, such as finding 
+ * its minimum, maximum, mean or median. It declares also a sorting
+ * function for arrays.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Jakob Sihle-Wissel   
+ * @date 13/03/2022
  *
  */
 #ifndef __STATS_H__
@@ -23,17 +26,83 @@
 
 /* Add Your Declarations and Function Comments here */ 
 
+void print_statistics(unsigned char[]);
 /**
- * @brief <Add Brief Description of Function Here>
+ * @brief Function to print statistical analysis of an array
  *
- * <Add Extended Description Here>
+ * This function takes an array of 8-bit unsigned chars as an input and
+ * prints its minimum, maximum, mean and median. 
  *
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
- * @param <Add InputName> <add description here>
+ * @param array The array to be analysed.
+ */
+
+void print_array(unsigned char[]);
+/**
+ * @brief Function to print an array
  *
- * @return <Add Return Informaiton here>
+ * This function takes an array of 8-bit unsigned chars as an input and
+ * prints it in the console. 
+ *
+ * @param array The array to be analysed.
+ */
+
+int find_minimum(unsigned char[]);
+/**
+ * @brief Function to find the minimum of an array
+ *
+ * This function takes an array of 8-bit unsigned chars as an input and
+ * returns its minimum. 
+ *
+ * @param array The array to be analysed.
+ *
+ * @return The minimum of the array.
+ */
+
+int find_maximum(unsigned char[]);
+/**
+ * @brief Function to find the maximum of an array
+ *
+ * This function takes an array of 8-bit unsigned chars as an input and
+ * returns its maximum. 
+ *
+ * @param array The array to be analysed.
+ *
+ * @return The maximum of the array.
+ */
+
+double find_mean(unsigned char[]);
+/**
+ * @brief Function to find the mean of an array
+ *
+ * This function takes an array of 8-bit unsigned chars as an input and
+ * returns its mean. 
+ *
+ * @param array The array to be analysed.
+ *
+ * @return The mean of the array.
+ */
+
+double find_median(unsigned char[]);
+/**
+ * @brief Function to find the median of an array
+ *
+ * This function takes an array of 8-bit unsigned chars as an input and
+ * returns its median, after sorting the array that was passed by it. 
+ *
+ * @param array The array to be analysed.
+ *
+ * @return The median of the array
+ */
+
+void sort_array(unsigned char[]);
+/**
+ * @brief Function to sort an array
+ *
+ * This function takes an array of 8-bit unsigned chars as an input and
+ * sorts it. The function returns nothing, but will effectively change the
+ * array that was passed by it. 
+ *
+ * @param array The array to be sorted.
  */
 
 
